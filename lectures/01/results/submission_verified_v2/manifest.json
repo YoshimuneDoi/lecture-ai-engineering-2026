@@ -1,0 +1,414 @@
+{
+  "schema_version": 2,
+  "question": "AIE2026の講座の宿題にある「3レベル」とは何ですか？",
+  "provenance": "Reconstructed from two learner-supplied terminal transcripts and one appended output file. B4 command settings were transcribed from the learner-supplied screenshot image(7).png. No model calls were made during reconstruction.",
+  "normalization_of_extracted_outputs": "UTF-8, LF line endings, leading/trailing empty lines normalized. Generated answer wording unchanged. Original source_logs bytes are preserved.",
+  "selection": {
+    "A_primary": [
+      "A1",
+      "A2",
+      "A3"
+    ],
+    "A_additional": [
+      "A4"
+    ],
+    "B_primary_attempts": [
+      "B1",
+      "B2",
+      "B3",
+      "B4"
+    ],
+    "B_primary_obtained_responses": [
+      "B2",
+      "B3",
+      "B4"
+    ],
+    "initial_comparison_attempts": [
+      "X1",
+      "X2"
+    ],
+    "decision_timing": "First three chronological A answers were selected after reviewing the A log, before collecting B. This was not preregistered.",
+    "B_selection_update": "After examining the appended file, all three obtained B responses (B2/B3/B4) were included. The earlier three-attempt record had one failure and two responses. This additional observation was not preregistered."
+  },
+  "counts": {
+    "homework_command_executions": 10,
+    "responses_received": 7,
+    "api_503_observed": 2,
+    "manual_interruptions": 1,
+    "timeout_expirations_observed": 0,
+    "primary_response_sample_sizes": {
+      "A": 3,
+      "B": 3
+    },
+    "actual_http_request_count": null
+  },
+  "environment_observed": {
+    "python_version": "3.12.15",
+    "branch": "lec01",
+    "pytest": {
+      "passed": 11,
+      "elapsed_seconds_reported_by_pytest": 8.09
+    },
+    "smoke_test_question": "日本の首都を1文で答えてください。",
+    "smoke_test_answer": "日本の首都は東京です。",
+    "api_key_status": "configured; value not included",
+    "app_ask_py_changed_for_experiment": false
+  },
+  "limitations": [
+    "SDK-internal retry count is unknown; command count is not necessarily HTTP request count.",
+    "Run timestamps, spacing, generation latency, and token counts were not recorded.",
+    "No observed timeout-expiration messages; configured timeout values are not measured runtimes.",
+    "Ctrl+C occurred while waiting for response headers; the eventual server outcome is unknown.",
+    "A2 originally targeted model_a_2.txt; A3 overwrote that file. A2 is recovered from the source terminal log.",
+    "No conclusion about general model quality or availability follows from this small, unbalanced sample.",
+    "B4 command and its configured timeout are supported by the screenshot; the appended text file contains outputs only.",
+    "The first output block in the appended file is the previously counted B3; only the second block adds a trial."
+  ],
+  "reference_snapshot": {
+    "repository": "https://github.com/matsuolab/lecture-ai-engineering-2026",
+    "reference_commit": "662cddd52724b330f3f4cd15123d1e55cb474874",
+    "note": "Reference snapshot used for verification; not a cryptographic verification of the learner runtime commit."
+  },
+  "sources": [
+    {
+      "id": "a",
+      "original_filename": "@YoshimuneDoi ➜ workspaceslecture-a.txt",
+      "path": "source_logs/model_a_terminal.txt",
+      "sha256": "a89a2508c290a575202c6a056995cf7e1df741168cc4bdf3715478c8951a7232",
+      "size_bytes": 15626,
+      "preservation": "Original supplied bytes; no edits."
+    },
+    {
+      "id": "b",
+      "original_filename": "貼り付けたテキスト（1）.txt",
+      "path": "source_logs/model_b_terminal.txt",
+      "sha256": "61a5c53736415d7eeaf4daddb416a1ce6d505c661643922651057833871065f0",
+      "size_bytes": 14435,
+      "preservation": "Original supplied bytes; no edits."
+    },
+    {
+      "id": "b_appended",
+      "original_filename": "model_b_alt_3.txt",
+      "path": "source_logs/model_b_alt_3_appended.txt",
+      "sha256": "68d1fc391a96819eb51aae76cabf4569a0544d1f09d379c2cd14b124c88c4bfa",
+      "size_bytes": 6155,
+      "preservation": "Original supplied bytes; no edits.",
+      "contains": [
+        "B3 duplicate of already-observed response",
+        "B4 newly verified response"
+      ]
+    }
+  ],
+  "trials": [
+    {
+      "trial_id": "A1",
+      "chronological_command_index": 1,
+      "condition": "A",
+      "model": "gemini-3.5-flash-lite",
+      "attempt_within_model": 1,
+      "role": "primary",
+      "status": "response_received",
+      "content_evaluable": true,
+      "source_log": "source_logs/model_a_terminal.txt",
+      "source_command_line": 34,
+      "source_output_lines_inclusive": [
+        35,
+        65
+      ],
+      "command": "AIE_MODEL=gemini-3.5-flash-lite uv run python -m app.ask \"AIE2026の講座の宿題にある「3レベル」とは何ですか？\" | tee lectures/01/results/model_a_1.txt",
+      "original_output_target": "lectures/01/results/model_a_1.txt",
+      "extracted_output": "a_run01.txt",
+      "extracted_sha256": "f2e1412ce836ca1a2abeabf869b9b1850b769e832121d6baa2339dca15548621",
+      "temperature_specified": false,
+      "elapsed_seconds": null,
+      "execution_datetime": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "timeout_command_limit_seconds": null,
+      "timeout_kill_after_seconds": null,
+      "timeout_expiration_observed": false,
+      "exit_code_recorded": null
+    },
+    {
+      "trial_id": "A2",
+      "chronological_command_index": 2,
+      "condition": "A",
+      "model": "gemini-3.5-flash-lite",
+      "attempt_within_model": 2,
+      "role": "primary",
+      "status": "response_received",
+      "content_evaluable": true,
+      "source_log": "source_logs/model_a_terminal.txt",
+      "source_command_line": 66,
+      "source_output_lines_inclusive": [
+        67,
+        100
+      ],
+      "command": "AIE_MODEL=gemini-3.5-flash-lite uv run python -m app.ask \"AIE2026の講座の宿題にある「3レベル」とは何ですか？\" | tee lectures/01/results/model_a_2.txt",
+      "original_output_target": "lectures/01/results/model_a_2.txt",
+      "extracted_output": "a_run02.txt",
+      "extracted_sha256": "45030e7cc9232db17de8f9cba06f116768322252fc04e2297e75205d24d5d3f4",
+      "temperature_specified": false,
+      "elapsed_seconds": null,
+      "execution_datetime": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "timeout_command_limit_seconds": null,
+      "timeout_kill_after_seconds": null,
+      "timeout_expiration_observed": false,
+      "exit_code_recorded": null
+    },
+    {
+      "trial_id": "A3",
+      "chronological_command_index": 3,
+      "condition": "A",
+      "model": "gemini-3.5-flash-lite",
+      "attempt_within_model": 3,
+      "role": "primary",
+      "status": "response_received",
+      "content_evaluable": true,
+      "source_log": "source_logs/model_a_terminal.txt",
+      "source_command_line": 101,
+      "source_output_lines_inclusive": [
+        102,
+        143
+      ],
+      "command": "AIE_MODEL=gemini-3.5-flash-lite uv run python -m app.ask \"AIE2026の講座の宿題にある「3レベル」とは何ですか？\" | tee lectures/01/results/model_a_2.txt",
+      "original_output_target": "lectures/01/results/model_a_2.txt",
+      "extracted_output": "a_run03.txt",
+      "extracted_sha256": "eea78fda49c9051d95394ab83c0bec6f334b5700803677f520f3825a4d157851",
+      "temperature_specified": false,
+      "elapsed_seconds": null,
+      "execution_datetime": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "timeout_command_limit_seconds": null,
+      "timeout_kill_after_seconds": null,
+      "timeout_expiration_observed": false,
+      "exit_code_recorded": null
+    },
+    {
+      "trial_id": "A4",
+      "chronological_command_index": 4,
+      "condition": "A",
+      "model": "gemini-3.5-flash-lite",
+      "attempt_within_model": 4,
+      "role": "additional",
+      "status": "response_received",
+      "content_evaluable": true,
+      "source_log": "source_logs/model_a_terminal.txt",
+      "source_command_line": 144,
+      "source_output_lines_inclusive": [
+        145,
+        187
+      ],
+      "command": "AIE_MODEL=gemini-3.5-flash-lite uv run python -m app.ask \"AIE2026の講座の宿題にある「3レベル」とは何ですか？\" | tee lectures/01/results/model_a_3.txt",
+      "original_output_target": "lectures/01/results/model_a_3.txt",
+      "extracted_output": "a_run04.txt",
+      "extracted_sha256": "a3a37768be964912661f035703d5c4e6bdeb04e20fbba9ff11251aeb7d917391",
+      "temperature_specified": false,
+      "elapsed_seconds": null,
+      "execution_datetime": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "timeout_command_limit_seconds": null,
+      "timeout_kill_after_seconds": null,
+      "timeout_expiration_observed": false,
+      "exit_code_recorded": null
+    },
+    {
+      "trial_id": "X1",
+      "chronological_command_index": 5,
+      "condition": "initial_comparison_model",
+      "model": "gemini-3.8-flash",
+      "attempt_within_model": 1,
+      "role": "operational_record",
+      "status": "api_503",
+      "content_evaluable": false,
+      "source_log": "source_logs/model_b_terminal.txt",
+      "source_command_line": 1,
+      "source_output_lines_inclusive": [
+        2,
+        5
+      ],
+      "command": "AIE_MODEL=gemini-3.8-flash uv run python -m app.ask \"AIE2026の講座の宿題にある「3レベル」とは何ですか？\" | tee -a lectures/01/results/model_b_1.txt",
+      "original_output_target": "lectures/01/results/model_b_1.txt",
+      "extracted_output": "initial_38_run01.txt",
+      "extracted_sha256": "ed9902a2525ba359eb14ab9dddaf569b05dc9736c9aded1b3900a0ce649d5d5f",
+      "temperature_specified": false,
+      "elapsed_seconds": null,
+      "execution_datetime": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "timeout_command_limit_seconds": null,
+      "timeout_kill_after_seconds": null,
+      "timeout_expiration_observed": false,
+      "exit_code_recorded": null
+    },
+    {
+      "trial_id": "X2",
+      "chronological_command_index": 6,
+      "condition": "initial_comparison_model",
+      "model": "gemini-3.8-flash",
+      "attempt_within_model": 2,
+      "role": "operational_record",
+      "status": "manually_interrupted",
+      "content_evaluable": false,
+      "source_log": "source_logs/model_b_terminal.txt",
+      "source_command_line": 6,
+      "source_output_lines_inclusive": [
+        7,
+        100
+      ],
+      "command": "AIE_MODEL=gemini-3.8-flash uv run python -m app.ask \"AIE2026の講座の宿題にある「3レベル」とは何ですか？\" | tee -a lectures/01/results/model_b_1.txt",
+      "original_output_target": "lectures/01/results/model_b_1.txt",
+      "extracted_output": "initial_38_run02.txt",
+      "extracted_sha256": "635561a8eb95fe2a993465cb006a067c1ee3f35d30122b3966a2880af69c553a",
+      "temperature_specified": false,
+      "elapsed_seconds": null,
+      "execution_datetime": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "timeout_command_limit_seconds": null,
+      "timeout_kill_after_seconds": null,
+      "timeout_expiration_observed": false,
+      "exit_code_recorded": null
+    },
+    {
+      "trial_id": "B1",
+      "chronological_command_index": 7,
+      "condition": "B",
+      "model": "gemini-3.1-flash-lite",
+      "attempt_within_model": 1,
+      "role": "failed_primary_attempt",
+      "status": "api_503",
+      "content_evaluable": false,
+      "source_log": "source_logs/model_b_terminal.txt",
+      "source_command_line": 102,
+      "source_output_lines_inclusive": [
+        103,
+        106
+      ],
+      "command": "timeout --verbose --kill-after=5s 90s env AIE_MODEL=gemini-3.1-flash-lite uv run python -u -m app.ask \"AIE2026の講座の宿題にある「3レベル」とは何ですか？\" 2>&1 | tee -a lectures/01/results/model_b_alt_1.txt",
+      "original_output_target": "lectures/01/results/model_b_alt_1.txt",
+      "extracted_output": "b_run01.txt",
+      "extracted_sha256": "f57169749a699037bd2719baa9d73212d1d008cbe596a49de8a7d8d4e489d1b2",
+      "temperature_specified": false,
+      "elapsed_seconds": null,
+      "execution_datetime": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "timeout_command_limit_seconds": 90,
+      "timeout_kill_after_seconds": 5,
+      "timeout_expiration_observed": false,
+      "exit_code_recorded": null
+    },
+    {
+      "trial_id": "B2",
+      "chronological_command_index": 8,
+      "condition": "B",
+      "model": "gemini-3.1-flash-lite",
+      "attempt_within_model": 2,
+      "role": "primary",
+      "status": "response_received",
+      "content_evaluable": true,
+      "source_log": "source_logs/model_b_terminal.txt",
+      "source_command_line": 107,
+      "source_output_lines_inclusive": [
+        108,
+        141
+      ],
+      "command": "timeout --verbose --kill-after=5s 90s env AIE_MODEL=gemini-3.1-flash-lite uv run python -u -m app.ask \"AIE2026の講座の宿題にある「3レベル」とは何ですか？\" 2>&1 | tee -a lectures/01/results/model_b_alt_2.txt",
+      "original_output_target": "lectures/01/results/model_b_alt_2.txt",
+      "extracted_output": "b_run02.txt",
+      "extracted_sha256": "847fdaa20d8e0ac00ed491ac05559f669c7f25a361246dce32d13904fb17cc9a",
+      "temperature_specified": false,
+      "elapsed_seconds": null,
+      "execution_datetime": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "timeout_command_limit_seconds": 90,
+      "timeout_kill_after_seconds": 5,
+      "timeout_expiration_observed": false,
+      "exit_code_recorded": null
+    },
+    {
+      "trial_id": "B3",
+      "chronological_command_index": 9,
+      "condition": "B",
+      "model": "gemini-3.1-flash-lite",
+      "attempt_within_model": 3,
+      "role": "primary",
+      "status": "response_received",
+      "content_evaluable": true,
+      "source_log": "source_logs/model_b_terminal.txt",
+      "source_command_line": 142,
+      "source_output_lines_inclusive": [
+        143,
+        174
+      ],
+      "command": "timeout --verbose --kill-after=5s 90s env AIE_MODEL=gemini-3.1-flash-lite uv run python -u -m app.ask \"AIE2026の講座の宿題にある「3レベル」とは何ですか？\" 2>&1 | tee -a lectures/01/results/model_b_alt_3.txt",
+      "original_output_target": "lectures/01/results/model_b_alt_3.txt",
+      "extracted_output": "b_run03.txt",
+      "extracted_sha256": "7ec395b36723b13374226f04a8343f1463ad4dc9722f3ba203bc3e07d3b2f037",
+      "temperature_specified": false,
+      "elapsed_seconds": null,
+      "execution_datetime": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "timeout_command_limit_seconds": 90,
+      "timeout_kill_after_seconds": 5,
+      "timeout_expiration_observed": false,
+      "exit_code_recorded": null
+    },
+    {
+      "trial_id": "B4",
+      "chronological_command_index": 10,
+      "condition": "B",
+      "model": "gemini-3.1-flash-lite",
+      "attempt_within_model": 4,
+      "role": "primary_after_additional_log_verification",
+      "status": "response_received",
+      "content_evaluable": true,
+      "source_log": "source_logs/model_b_alt_3_appended.txt",
+      "source_command_line": null,
+      "source_output_lines_inclusive": [
+        33,
+        71
+      ],
+      "command": "timeout --verbose --kill-after=5s 90s env AIE_MODEL=gemini-3.1-flash-lite uv run python -u -m app.ask \"AIE2026の講座の宿題にある「3レベル」とは何ですか？\" 2>&1 | tee -a lectures/01/results/model_b_alt_3.txt",
+      "original_output_target": "lectures/01/results/model_b_alt_3.txt",
+      "extracted_output": "b_run04.txt",
+      "extracted_sha256": "eccc6b60df83d94ccbf75e875efc58c6e17eaefa05754455f3eef5466aa2b63c",
+      "temperature_specified": false,
+      "elapsed_seconds": null,
+      "execution_datetime": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "timeout_command_limit_seconds": 90,
+      "timeout_kill_after_seconds": 5,
+      "timeout_expiration_observed": false,
+      "exit_code_recorded": null,
+      "source_header_line": 33,
+      "command_source": {
+        "kind": "transcribed_from_user_supplied_screenshot",
+        "source": "image(7).png",
+        "note": "Command is not in the appended text file. Screenshot is not included in the public submission pack."
+      }
+    }
+  ],
+  "revision": "v2: appended B4 verified; B3 duplicate excluded; three obtained responses per comparison model.",
+  "duplicate_observations": [
+    {
+      "source_log": "source_logs/model_b_alt_3_appended.txt",
+      "source_lines_inclusive": [
+        1,
+        32
+      ],
+      "matches_trial": "B3",
+      "exact_extracted_bytes_match": true,
+      "sha256": "7ec395b36723b13374226f04a8343f1463ad4dc9722f3ba203bc3e07d3b2f037",
+      "counted_as_new_trial": false
+    }
+  ]
+}

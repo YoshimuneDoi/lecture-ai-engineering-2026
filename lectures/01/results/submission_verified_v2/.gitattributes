@@ -1,0 +1,4 @@
+# Keep the evidence bytes stable even when core.autocrlf is enabled.
+*.txt -text
+# Preserve original terminal whitespace; the raw sources are not authored code.
+source_logs/*.txt -whitespace

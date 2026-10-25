@@ -1,0 +1,175 @@
+(aie2026-exercises) @YoshimuneDoi ➜ /workspaces/lecture-ai-engineering-2026 (lec01) $ AIE_MODEL=gemini-3.8-flash uv run python -m app.ask "AIE2026の講座の宿題にある「3レベル」とは何ですか？" | tee -a lectures/01/results/model_b_1.txt
+[model] gemini-3.8-flash
+[質問] AIE2026の講座の宿題にある「3レベル」とは何ですか？
+
+モデルが混み合っています（503）。少し待ってから再実行してください。
+(aie2026-exercises) @YoshimuneDoi ➜ /workspaces/lecture-ai-engineering-2026 (lec01) $ AIE_MODEL=gemini-3.8-flash uv run python -m app.ask "AIE2026の講座の宿題にある「3レベル」とは何ですか？" | tee -a lectures/01/results/model_b_1.txt
+
+^CTraceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspaces/lecture-ai-engineering-2026/app/ask.py", line 49, in <module>
+    main()
+  File "/workspaces/lecture-ai-engineering-2026/app/ask.py", line 42, in main
+    print(ask(args.question))
+          ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/app/ask.py", line 26, in ask
+    response = client.models.generate_content(model=MODEL, contents=question)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/google/genai/models.py", line 6288, in generate_content
+    response = self._generate_content_with_continuation(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/google/genai/models.py", line 6129, in _generate_content_with_continuation
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/google/genai/models.py", line 4668, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 1839, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 1632, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 1608, in _request_once
+    response = self._httpx_client.send(httpx_request, stream=stream)  # type: ignore[union-attr, arg-type]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/lecture-ai-engineering-2026/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/ssl.py", line 1245, in recv
+    return self.read(buflen)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/ssl.py", line 1118, in read
+    return self._sslobj.read(len)
+           ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>
+BrokenPipeError: [Errno 32] Broken pipe
+
+(aie2026-exercises) @YoshimuneDoi ➜ /workspaces/lecture-ai-engineering-2026 (lec01) $ set -o pipefail
+(aie2026-exercises) @YoshimuneDoi ➜ /workspaces/lecture-ai-engineering-2026 (lec01) $ timeout --verbose --kill-after=5s 90s env AIE_MODEL=gemini-3.1-flash-lite uv run python -u -m app.ask "AIE2026の講座の宿題にある「3レベル」とは何ですか？" 2>&1 | tee -a lectures/01/results/model_b_alt_1.txt
+[model] gemini-3.1-flash-lite
+[質問] AIE2026の講座の宿題にある「3レベル」とは何ですか？
+
+モデルが混み合っています（503）。少し待ってから再実行してください。
+(aie2026-exercises) @YoshimuneDoi ➜ /workspaces/lecture-ai-engineering-2026 (lec01) $ timeout --verbose --kill-after=5s 90s env AIE_MODEL=gemini-3.1-flash-lite uv run python -u -m app.ask "AIE2026の講座の宿題にある「3レベル」とは何ですか？" 2>&1 | tee -a lectures/01/results/model_b_alt_2.txt
+[model] gemini-3.1-flash-lite
+[質問] AIE2026の講座の宿題にある「3レベル」とは何ですか？
+
+AIE2026（あるいは関連するAI教育プログラム）の宿題で言及される「3レベル」は、一般的に**「AI活用における習熟度や深さ」**を指す概念として使われることが多いです。
+
+具体的な定義は講座のシラバスや配布資料に依存しますが、多くのAI講座では以下の3段階のステップアップを目指す構成になっています。
+
+### 一般的な「3レベル」の解釈
+
+1.  **レベル1：AIを「体験する・使う」（利用者）**
+    *   **内容:** ChatGPTや画像生成AIなどのツールを実際に触り、基本的なプロンプト（指示文）を入力して、結果を得る段階。
+    *   **目的:** AIで何ができるのかを理解し、日常的な業務やタスクの効率化に使うこと。
+
+2.  **レベル2：AIを「使いこなす・改善する」（活用者）**
+    *   **内容:** プロンプトエンジニアリング（より良い回答を引き出すための工夫）や、AIに特定の役割を与える（ペルソナ設定）、複数のツールを組み合わせて使う段階。
+    *   **目的:** 精度を高め、自分の業務や特定の目的に合わせて「自分専用のAIツール」のように使いこなすこと。
+
+3.  **レベル3：AIを「構築する・実装する」（開発・設計者）**
+    *   **内容:** AIの仕組みを理解し、API連携やノーコードツールを使ってシステムを構築したり、独自のデータでAIをカスタマイズ（RAGやファインチューニング）したりする段階。
+    *   **目的:** AIを使って新たな価値を創造したり、既存の業務プロセスそのものをAI前提で再設計（DX）したりすること。
+
+---
+
+### 確認すべきポイント
+もしお手元の教材に「3レベル」の明確な説明がある場合は、以下の点に注目してみてください。
+
+*   **「初級・中級・上級」という分類なのか？**
+*   **「生成・評価・改善」といったプロセス上の分類なのか？**
+*   **「個人・チーム・組織」といった適応範囲の分類なのか？**
+
+**アドバイス:**
+もし講座内の資料が見当たらない場合は、**「今回の課題がどのレベルに相当するものか」**という視点で、提出を求められている成果物が「単なる回答の出力」なのか「回答の精度向上」なのか「システムや仕組みの構築」なのかを分析すると、自ずと答えが見えてくるはずです。
+
+もし特定の課題内容や資料のキャプチャなどがあれば、より詳しく解説できますので教えてくださいね。
+(aie2026-exercises) @YoshimuneDoi ➜ /workspaces/lecture-ai-engineering-2026 (lec01) $ timeout --verbose --kill-after=5s 90s env AIE_MODEL=gemini-3.1-flash-lite uv run python -u -m app.ask "AIE2026の講座の宿題にある「3レベル」とは何ですか？" 2>&1 | tee -a lectures/01/results/model_b_alt_3.txt
+[model] gemini-3.1-flash-lite
+[質問] AIE2026の講座の宿題にある「3レベル」とは何ですか？
+
+AIE2026（あるいは関連するAI教育プログラム）における「3レベル」という言葉は、学習者が自分の理解度やスキルレベルを段階的に把握するための**「習熟度指標」**を指している可能性が高いです。
+
+一般的に、AI学習プログラムにおける「3レベル」は、以下のようなステップで定義されることが一般的です。
+
+### 一般的な「3レベル」の定義例
+
+1.  **レベル1：基礎知識（知る・使う）**
+    *   **内容:** AIの仕組みや基本概念を理解し、ツール（ChatGPTなど）を日常的・直感的に操作できる状態。
+    *   **できること:** プロンプトの基本操作、基本的な文章作成や要約、検索の代わりとして使う。
+2.  **レベル2：応用・活用（使いこなす・仕組み化）**
+    *   **内容:** 業務効率化のためにAIを組み込んだり、複雑な指示（プロンプトエンジニアリング）を行って望む回答を正確に引き出せる状態。
+    *   **できること:** 役割設定、出力形式の指定、構造的なプロンプトの作成、簡単な自動化・ワークフローへの組み込み。
+3.  **レベル3：専門・構築（創る・最適化）**
+    *   **内容:** APIを活用したツール開発、RAG（検索拡張生成）などの仕組みの理解、AIを活用した新しいビジネスモデルの構築など。
+    *   **できること:** プログラミングによるAI連携、独自データを用いたAIのチューニング、社内DXの推進。
+
+---
+
+### 注意点：文脈による違い
+もし、お手元の講座資料に具体的な定義が記載されている場合は、以下の点を確認してみてください。
+
+*   **「AIリテラシー・スキル・実装力」の3段階**かもしれません。
+*   **「初級・中級・上級」**という表現が「3レベル」と呼ばれているだけかもしれません。
+*   **「思考レベル（情報を得る・整理する・創り出す）」**という文脈かもしれません。
+
+**具体的な確認方法：**
+もし、講座のシラバスや配布されたテキスト（PDFなど）をお持ちであれば、**「3レベル」という言葉の直前や、冒頭のオリエンテーションページ**に定義が図解されているはずです。
+
+もし差し支えなければ、「どのような文脈（例：プロンプトの書き方のレベル、あるいは学習コースのレベルなど）」でその言葉が出てきたか教えていただければ、より詳しく解説できるかもしれません。
+(aie2026-exercises) @YoshimuneDoi ➜ /workspaces/lecture-ai-engineering-2026 (lec01) $ 
